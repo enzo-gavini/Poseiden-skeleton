@@ -19,6 +19,7 @@
                 <label for="curveId" class="col-sm-2 control-label">Curve Id:</label>
                 <div class="col-sm-10">
                     <input type="number" th:field="*{curveId}" id="curveId" class="form-control" placeholder="Curve Id" required/>
+
                     <p class="text-danger" th:if="${#fields.hasErrors('curveId')}" th:errors="*{curveId}"></p>
                 </div>
             </div>

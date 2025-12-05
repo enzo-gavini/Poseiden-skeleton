@@ -38,8 +38,7 @@ public class CurveController {
         // TODO: check data valid and save to db, after saving return Curve list
         if (!result.hasErrors()) {
             curvePointRepository.save(curvePoint);
-            model.addAttribute("curvePoint", curvePointRepository.findAll());
-            return "redirect:/curvePoint/List";
+            return "redirect:/curvePoint/list";
         }
         return "curvePoint/add";
     }
@@ -59,7 +58,7 @@ public class CurveController {
         if (result.hasErrors()) {
             return "curvePoint/update";
         }
-        curvePoint.setCurveId(id);
+        curvePoint.setId(id);
         curvePointRepository.save(curvePoint);
         model.addAttribute("curvePoint", curvePointRepository.findAll());
         return "redirect:/curvePoint/list";

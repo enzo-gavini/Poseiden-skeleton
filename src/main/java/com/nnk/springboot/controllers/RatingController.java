@@ -38,7 +38,7 @@ public class RatingController {
         if (!result.hasErrors()) {
             ratingRepository.save(rating);
             model.addAttribute("rating", ratingRepository.findAll());
-            return "redirect:/user/list";
+            return "redirect:/rating/list";
         }
         return "rating/add";
     }

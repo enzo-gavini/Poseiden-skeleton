@@ -15,9 +15,50 @@
 
 	<div class="row">
 		<form action="#" th:action="@{/rating/validate}" th:object="${rating}" method="post" class="form-horizontal" style="width: 100%">
-			<!--
-			TODO: Create a form to input the values of Rating, there are 2 buttons: Save data and Cancel to the list Rating
-			 -->
+			<!--TODO: Create a form to input the values of Rating, there are 2 buttons: Save data and Cancel to the list Rating -->
+            <!-- Champ MoodysRating -->
+            <div class="form-group">
+                <label for="moodysRating" class="col-sm-2 control-label">MoodysRatingId:</label>
+                <div class="col-sm-10">
+                    <input type="text" th:field="*{moodysRating}" id="moodysRating" class="form-control" placeholder="MoodysRating" required/>
+                    <p class="text-danger" th:if="${#fields.hasErrors('moodysRating')}" th:errors="*{moodysRating}"></p>
+                </div>
+            </div>
+
+            <!-- Champ SandPRating -->
+            <div class="form-group">
+                <label for="sandPRating" class="col-sm-2 control-label">SandPRating:</label>
+                <div class="col-sm-10">
+                    <input type="text"  th:field="*{sandPRating}" id="sandPRating" class="form-control" placeholder="SandPRating" required/>
+                    <p class="text-danger" th:if="${#fields.hasErrors('sandPRating')}" th:errors="*{sandPRating}"></p>
+                </div>
+            </div>
+
+            <!-- Champ FitchRating -->
+            <div class="form-group">
+                <label for="fitchRating" class="col-sm-2 control-label">FitchRating:</label>
+                <div class="col-sm-10">
+                    <input type="text"  th:field="*{fitchRating}" id="fitchRating" class="form-control" placeholder="FitchRating"/>
+                    <p class="text-danger" th:if="${#fields.hasErrors('fitchRating')}" th:errors="*{fitchRating}"></p>
+                </div>
+            </div>
+
+            <!-- Champ OrderNumber -->
+            <div class="form-group">
+                <label for="orderNumber" class="col-sm-2 control-label">OrderNumber:</label>
+                <div class="col-sm-10">
+                    <input type="number" step="0.1" th:field="*{orderNumber}" id="orderNumber" class="form-control" placeholder="OrderNumber"/>
+                    <p class="text-danger" th:if="${#fields.hasErrors('orderNumber')}" th:errors="*{orderNumber}"></p>
+                </div>
+            </div>
+
+            <!-- Boutons Save et Cancel -->
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <a th:href="@{/rating/list}" class="btn btn-danger">Cancel</a>
+                </div>
+            </div>
 
 		</form>
 	</div>
